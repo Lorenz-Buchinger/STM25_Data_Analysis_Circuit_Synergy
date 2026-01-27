@@ -1,0 +1,527 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataBiases": "cr:dataBiases",
+        "dataCollection": "cr:dataCollection",
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isEnumeration": "cr:isEnumeration",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "personalSensitiveInformation": "cr:personalSensitiveInformation",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform",
+        "wd": "https://www.wikidata.org/wiki/"
+    },
+    "alternateName": "Traffic Crashes Dataset",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "license": {
+        "@type": "sc:CreativeWork",
+        "name": "Other (specified in description)"
+    },
+    "distribution": [
+        {
+            "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/oktayrdeki/traffic-accidents?datasetVersionNumber=1",
+            "contentSize": "4.637 MB",
+            "md5": "udB4bu3ml\u002B2ehO8LMSmudQ==",
+            "encodingFormat": "application/zip",
+            "@id": "archive.zip",
+            "@type": "cr:FileObject",
+            "name": "archive.zip",
+            "description": "Archive containing all the contents of the Traffic Accidents dataset"
+        },
+        {
+            "contentUrl": "traffic_accidents.csv",
+            "containedIn": {
+                "@id": "archive.zip"
+            },
+            "encodingFormat": "text/csv",
+            "@id": "traffic_accidents.csv_fileobject",
+            "@type": "cr:FileObject",
+            "name": "traffic_accidents.csv",
+            "description": "Accident Dataset"
+        }
+    ],
+    "recordSet": [
+        {
+            "field": [
+                {
+                    "dataType": [
+                        "sc:Date"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "crash_date"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/crash_date",
+                    "@type": "cr:Field",
+                    "name": "crash_date",
+                    "description": "The date the accident occurred"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "traffic_control_device"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/traffic_control_device",
+                    "@type": "cr:Field",
+                    "name": "traffic_control_device",
+                    "description": "The type of traffic control device involved (e.g., traffic light, sign)"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "weather_condition"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/weather_condition",
+                    "@type": "cr:Field",
+                    "name": "weather_condition",
+                    "description": "The weather conditions at the time of the accident."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "lighting_condition"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/lighting_condition",
+                    "@type": "cr:Field",
+                    "name": "lighting_condition",
+                    "description": "The lighting conditions at the time of the accident."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "first_crash_type"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/first_crash_type",
+                    "@type": "cr:Field",
+                    "name": "first_crash_type",
+                    "description": "The initial type of the crash (e.g., head-on, rear-end)"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "trafficway_type"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/trafficway_type",
+                    "@type": "cr:Field",
+                    "name": "trafficway_type",
+                    "description": "The type of roadway involved in the accident (e.g., highway, local road)."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "alignment"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/alignment",
+                    "@type": "cr:Field",
+                    "name": "alignment",
+                    "description": "The alignment of the road where the accident occurred (e.g., straight, curved)."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "roadway_surface_cond"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/roadway_surface_cond",
+                    "@type": "cr:Field",
+                    "name": "roadway_surface_cond",
+                    "description": "The condition of the roadway surface (e.g., dry, wet, icy)."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "road_defect"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/road_defect",
+                    "@type": "cr:Field",
+                    "name": "road_defect",
+                    "description": "The condition of the roadway surface (e.g., dry, wet, icy)."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "crash_type"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/crash_type",
+                    "@type": "cr:Field",
+                    "name": "crash_type",
+                    "description": "The overall type of the crash."
+                },
+                {
+                    "dataType": [
+                        "sc:Boolean"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "intersection_related_i"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/intersection_related_i",
+                    "@type": "cr:Field",
+                    "name": "intersection_related_i",
+                    "description": "Whether the accident was related to an intersection."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "damage"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/damage",
+                    "@type": "cr:Field",
+                    "name": "damage",
+                    "description": "The extent of the damage caused by the accident."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "prim_contributory_cause"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/prim_contributory_cause",
+                    "@type": "cr:Field",
+                    "name": "prim_contributory_cause",
+                    "description": "The primary cause contributing to the crash."
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "num_units"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/num_units",
+                    "@type": "cr:Field",
+                    "name": "num_units",
+                    "description": "The number of vehicles involved in the accident."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "most_severe_injury"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/most_severe_injury",
+                    "@type": "cr:Field",
+                    "name": "most_severe_injury",
+                    "description": "The most severe injury sustained in the crash."
+                },
+                {
+                    "dataType": [
+                        "sc:Float"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "injuries_total"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/injuries_total",
+                    "@type": "cr:Field",
+                    "name": "injuries_total",
+                    "description": "The most severe injury sustained in the crash."
+                },
+                {
+                    "dataType": [
+                        "sc:Float"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "injuries_fatal"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/injuries_fatal",
+                    "@type": "cr:Field",
+                    "name": "injuries_fatal",
+                    "description": "The number of fatal injuries resulting from the accident."
+                },
+                {
+                    "dataType": [
+                        "sc:Float"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "injuries_incapacitating"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/injuries_incapacitating",
+                    "@type": "cr:Field",
+                    "name": "injuries_incapacitating",
+                    "description": "The number of incapacitating injuries."
+                },
+                {
+                    "dataType": [
+                        "sc:Float"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "injuries_non_incapacitating"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/injuries_non_incapacitating",
+                    "@type": "cr:Field",
+                    "name": "injuries_non_incapacitating",
+                    "description": "The number of non-incapacitating injuries."
+                },
+                {
+                    "dataType": [
+                        "sc:Float"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "injuries_reported_not_evident"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/injuries_reported_not_evident",
+                    "@type": "cr:Field",
+                    "name": "injuries_reported_not_evident",
+                    "description": "The number of injuries reported but not visibly evident."
+                },
+                {
+                    "dataType": [
+                        "sc:Float"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "injuries_no_indication"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/injuries_no_indication",
+                    "@type": "cr:Field",
+                    "name": "injuries_no_indication",
+                    "description": "The number of injuries reported but not visibly evident."
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "crash_hour"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/crash_hour",
+                    "@type": "cr:Field",
+                    "name": "crash_hour",
+                    "description": "The hour the accident occurred."
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "crash_day_of_week"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/crash_day_of_week",
+                    "@type": "cr:Field",
+                    "name": "crash_day_of_week",
+                    "description": "The day of the week the accident occurred."
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "traffic_accidents.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "crash_month"
+                        }
+                    },
+                    "@id": "traffic_accidents.csv/crash_month",
+                    "@type": "cr:Field",
+                    "name": "crash_month",
+                    "description": "The day of the week the accident occurred."
+                }
+            ],
+            "@id": "traffic_accidents.csv",
+            "@type": "cr:RecordSet",
+            "name": "traffic_accidents.csv",
+            "description": "Accident Dataset"
+        }
+    ],
+    "version": 1,
+    "keywords": [
+        "technique \u003E data visualization",
+        "technique \u003E exploratory data analysis",
+        "technique \u003E data analytics",
+        "analysis \u003E data cleaning",
+        "technique \u003E data storytelling"
+    ],
+    "isAccessibleForFree": true,
+    "includedInDataCatalog": {
+        "@type": "sc:DataCatalog",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com"
+    },
+    "creator": {
+        "@type": "sc:Person",
+        "name": "Oktay \u00D6rdek\u00E7i",
+        "url": "/oktayrdeki",
+        "image": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12966655-kg.jpg?t=2025-01-05-16-38-29"
+    },
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com/organizations/kaggle",
+        "image": "https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png"
+    },
+    "thumbnailUrl": "https://storage.googleapis.com/kaggle-datasets-images/6513854/10524793/90a78e7f713bc4614c4b9bfddebf674b/dataset-card.png?t=2025-01-20-10-44-09",
+    "dateModified": "2025-01-20T10:33:44.323",
+    "datePublished": "2025-01-20T10:51:25.4305595",
+    "@type": "sc:Dataset",
+    "name": "Traffic Accidents",
+    "url": "https://www.kaggle.com/datasets/oktayrdeki/traffic-accidents/versions/1",
+    "description": "# \uD83C\uDF0D Dataset Description\n\nThis dataset contains detailed information on traffic accidents across various regions and time periods. It includes various metrics such as accident date, weather conditions, lighting conditions, crash types, injuries, and vehicle involvement. The data spans multiple locations and accident types, offering a comprehensive view of traffic incidents and their causes.\n\n---\n\n# \uD83D\uDCCA Columns:\n\n- **crash_date**: The date the accident occurred.\n- **traffic_control_device**: The type of traffic control device involved (e.g., traffic light, sign).\n- **weather_condition**: The weather conditions at the time of the accident.\n- **lighting_condition**: The lighting conditions at the time of the accident.\n- **first_crash_type**: The initial type of the crash (e.g., head-on, rear-end).\n- **trafficway_type**: The type of roadway involved in the accident (e.g., highway, local road).\n- **alignment**: The alignment of the road where the accident occurred (e.g., straight, curved).\n- **roadway_surface_cond**: The condition of the roadway surface (e.g., dry, wet, icy).\n- **road_defect**: Any defects present on the road surface.\n- **crash_type**: The overall type of the crash.\n- **intersection_related_i**: Whether the accident was related to an intersection.\n- **damage**: The extent of the damage caused by the accident.\n- **prim_contributory_cause**: The primary cause contributing to the crash.\n- **num_units**: The number of vehicles involved in the accident.\n- **most_severe_injury**: The most severe injury sustained in the crash.\n- **injuries_total**: The total number of injuries reported.\n- **injuries_fatal**: The number of fatal injuries resulting from the accident.\n- **injuries_incapacitating**: The number of incapacitating injuries.\n- **injuries_non_incapacitating**: The number of non-incapacitating injuries.\n- **injuries_reported_not_evident**: The number of injuries reported but not visibly evident.\n- **injuries_no_indication**: The number of cases with no indication of injury.\n- **crash_hour**: The hour the accident occurred.\n- **crash_day_of_week**: The day of the week the accident occurred.\n- **crash_month**: The month the accident occurred.\n\n---\n\n# \uD83D\uDD0D Use Cases:\n\n- **Accident Analysis**: Analyze accident trends, types, and the severity of injuries across different locations, time periods, and conditions.\n- **Traffic Safety**: Understand the factors contributing to accidents (e.g., weather, lighting, road conditions) to inform traffic safety measures.\n- **Predictive Modeling**: Use the dataset to forecast accident hotspots, potential injuries, and the impact of various factors on crash severity.\n"
+}
